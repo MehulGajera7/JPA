@@ -6,6 +6,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import org.hibernate.validator.constraints.UniqueElements;
+
 @Entity
 public class User {
 	@Id
@@ -16,6 +18,7 @@ public class User {
 	private String uname;
 	
 	@Column
+	//@UniqueElements(message = "Please Enter Unique Roll No")
 	private Integer rollno;
 
 	public Integer getUid() {

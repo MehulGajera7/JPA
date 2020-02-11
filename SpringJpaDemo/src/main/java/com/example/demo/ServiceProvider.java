@@ -1,10 +1,10 @@
 package com.example.demo;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.AutoConfigurationPackage;
 import org.springframework.stereotype.Service;
 
-import antlr.collections.List;
 
 @Service
 public class ServiceProvider{
@@ -25,5 +25,15 @@ public class ServiceProvider{
 	public List<User> getAllUser()
 	{
 		return this.jr.findAll();
+	}
+	
+	public User UpdateUser(Integer id)
+	{
+		return this.jr.findByUid(id);
+	}
+	
+	public void update(User user)
+	{
+		this.jr.save(user);
 	}
 }
